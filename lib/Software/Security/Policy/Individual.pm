@@ -14,7 +14,7 @@ sub meta_name  { 'individual' }
 1;
 __DATA__
 __SUMMARY__
-Security Policy for the {{ $self->program }} distribution.
+# Security Policy for the {{ $self->program }} distribution.
 
 Report issues via email at: {{ $self->maintainer }}.
 

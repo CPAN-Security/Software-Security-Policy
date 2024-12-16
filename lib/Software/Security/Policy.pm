@@ -10,7 +10,7 @@ use Text::Template ();
 
 =head1 SYNOPSIS
 
-  my $policy = Software::Security::Policy::SingleDeveloper->new({
+  my $policy = Software::Security::Policy::Individual->new({
     maintainer => 'Timothy Legge',
   });
 

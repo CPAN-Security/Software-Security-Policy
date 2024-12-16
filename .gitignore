@@ -1,0 +1,14 @@
+Release-*
+.build
+MYMETA.*
+*~
+#*
+.#*
+Makefile
+pm_to_blib
+blib
+*.tar.gz
+MANIFEST
+MANIFEST.bak
+Makefile.old
+Software-Security-Policy*

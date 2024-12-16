@@ -8,7 +8,6 @@ use parent 'Software::Security::Policy';
 # ABSTRACT: The Individual Security Policy
 
 sub name { 'individual' }
-sub url  { 'https://security.metacpan.org/docs/guides/security-policy-for-authors.html' }
 sub meta_name  { 'individual' }
 
 1;

@@ -55,6 +55,8 @@ These methods are attribute readers.
 
 =cut
 
+sub url { $_[0]->{url} || 'SECURITY.md' }
+
 sub support_years { $_[0]->{support_years} || '10'}
 
 sub timeframe { $_[0]->{timeframe} || '5 days'    }

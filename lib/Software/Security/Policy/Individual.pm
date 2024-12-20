@@ -8,7 +8,7 @@ use parent 'Software::Security::Policy';
 # ABSTRACT: The Individual Security Policy
 
 sub name { 'individual' }
-sub meta_name  { 'individual' }
+sub version {'0.1.8' }
 
 1;
 __DATA__

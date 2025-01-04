@@ -3,7 +3,7 @@ NAME
     Policys
 
 VERSION
-    version 0.03
+    version 0.04
 
 SYNOPSIS
       my $policy = Software::Security::Policy::Individual->new({
@@ -131,7 +131,7 @@ AUTHOR
     Timothy Legge <timlegge@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2024 by Timothy Legge
+    This software is copyright (c) 2025 by Timothy Legge
     <timlegge@gmail.com>.
 
     This is free software; you can redistribute it and/or modify it under

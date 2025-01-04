@@ -2,6 +2,12 @@ Revision history for Perl extension Software::Security::Policy
 
 {{$NEXT}}
 
+    - 04db58d Update the published SECURITY.md file
+    - a31e735 Increment version and copyright years
+    - 37803a6 Move the repo under CPAN-Security
+    - c9df99a Updates for Individual 0.2.2
+    - a359ae0 v0.03
+
 0.03 -- Thu Dec 19 21:06:37 AST 2024
 
     [Major items]

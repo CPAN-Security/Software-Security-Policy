@@ -39,6 +39,9 @@ METHODS
 
     url a url where the most current security policy can be found.
 
+    git_url
+        a git url where the most current security policy can be found.
+
     support_years
         the number of years for which past major versions of Perl would be
         supported
@@ -93,6 +96,11 @@ METHODS
     This method returns the URL at which a canonical text of the security
     policy can be found, if one is available. If possible, this will point
     at plain text, but it may point to an HTML resource.
+
+  git_url
+    This method returns the git URL at which a canonical text of the
+    security policy can be found, if one is available. If possible, this
+    will point at plain text, but it may point to an HTML resource.
 
   summary
     This method returns a snippet of text, usually a few lines, indicating

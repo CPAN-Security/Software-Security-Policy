@@ -58,6 +58,10 @@ Only used if timeframe is undefined and timeframe_quantity is defined
 
 a url where the most current security policy can be found.
 
+=item git_url
+
+a git url where the most current security policy can be found.
+
 =item support_years
 
 the number of years for which past major versions of Perl would be
@@ -109,7 +113,14 @@ These methods are attribute readers.
 
 =cut
 
-sub url { $_[0]->{url} || 'SECURITY.md' }
+sub url { (defined $_[0]->{url} ? $_[0]->{url} :
+            (defined $_[0]->{git_url} ? $_[0]->{git_url} :
+                'SECURITY.md')) }
+
+sub git_url { (defined $_[0]->{git_url} ? $_[0]->{git_url} :
+            (defined $_[0]->{url} ? $_[0]->{url} :
+                'SECURITY.md')) }
+
 
 sub support_years { $_[0]->{support_years} || '10'}
 
@@ -160,6 +171,12 @@ of a sentence, generally with a leading capitalized "The."
 =method url
 
 This method returns the URL at which a canonical text of the security policy can be
+found, if one is available.  If possible, this will point at plain text, but it
+may point to an HTML resource.
+
+=method git_url
+
+This method returns the git URL at which a canonical text of the security policy can be
 found, if one is available.  If possible, this will point at plain text, but it
 may point to an HTML resource.
 

@@ -8,7 +8,7 @@ use parent 'Software::Security::Policy';
 # ABSTRACT: The Individual Security Policy
 
 sub name { 'individual' }
-sub version {'0.2.3' }
+sub version {'1.0.0' }
 
 1;
 __DATA__
@@ -21,10 +21,10 @@ __SECURITY-POLICY__
 This is the Security Policy for the Perl {{ $self->program }} distribution.
 
 The latest version of the Security Policy can be found in the
-[git repository for {{ $self->program }}]( {{ $self->git_url }}).
+[git repository for {{ $self->program }}]({{ $self->git_url }}).
 
 This text is based on the CPAN Security Group's Guidelines for Adding
-a Security Policy to Perl Distributions (version 0.2.3)
+a Security Policy to Perl Distributions (version 1.0.0)
 https://security.metacpan.org/docs/guides/security-policy-for-authors.html
 
 # How to Report a Security Vulnerability

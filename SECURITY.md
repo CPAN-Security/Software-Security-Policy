@@ -6,10 +6,10 @@ Report issues via email at: Timothy Legge <timlegge@gmail.com>.
 This is the Security Policy for the Perl Software::Security::Policy distribution.
 
 The latest version of the Security Policy can be found in the
-[git repository for Software::Security::Policy]( https://github.com/CPAN-Security/Software-Security-Policy/blob/main/SECURITY.md).
+[git repository for Software::Security::Policy](https://github.com/CPAN-Security/Software-Security-Policy/blob/main/SECURITY.md).
 
 This text is based on the CPAN Security Group's Guidelines for Adding
-a Security Policy to Perl Distributions (version 0.2.2)
+a Security Policy to Perl Distributions (version 1.0.0)
 https://security.metacpan.org/docs/guides/security-policy-for-authors.html
 
 # How to Report a Security Vulnerability
@@ -58,7 +58,7 @@ modules or downstream software that uses this software.
 
 They may also forward this issue to CPANSec.
 
-# Which Software this Policy Applies to
+# Which Software This Policy Applies To
 
 Any security vulnerabilities in Software::Security::Policy are covered by this policy.
 

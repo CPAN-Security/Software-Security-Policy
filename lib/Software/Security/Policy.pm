@@ -10,11 +10,20 @@ use Text::Template ();
 
 =head1 SYNOPSIS
 
+  use strict;
+  use warnings;
+
+  use Software::Security::Policy::Individual;
+
   my $policy = Software::Security::Policy::Individual->new({
-    maintainer => 'security@example.com',
+    maintainer  => 'Timothy Legge <timlegge@gmail.com>',
+    program     => 'Software::Security::Policy',
+    timeframe   => '7 days',
+    url         => 'https://github.com/CPAN-Security/Software-Security-Policy/blob/main/SECURITY.md',
+    support_years   => '10',
   });
 
-  print $output_fh $policy->fulltext;
+  print $policy->fulltext, "\n";
 
 =head1 METHODS
 

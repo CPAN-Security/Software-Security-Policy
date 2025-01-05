@@ -10,11 +10,20 @@ use Text::Template ();
 
 =head1 SYNOPSIS
 
+  use strict;
+  use warnings;
+
+  use Software::Security::Policy::Individual;
+
   my $policy = Software::Security::Policy::Individual->new({
-    maintainer => 'security@example.com',
+    maintainer  => 'Timothy Legge <timlegge@gmail.com>',
+    program     => 'Software::Security::Policy',
+    timeframe   => '7 days',
+    url         => 'https://github.com/CPAN-Security/Software-Security-Policy/blob/main/SECURITY.md',
+    support_years   => '10',
   });
 
-  print $output_fh $policy->fulltext;
+  print $policy->fulltext, "\n";
 
 =head1 METHODS
 
@@ -57,6 +66,10 @@ Only used if timeframe is undefined and timeframe_quantity is defined
 =item url
 
 a url where the most current security policy can be found.
+
+=item git_url
+
+a git url where the most current security policy can be found.
 
 =item support_years
 
@@ -109,7 +122,14 @@ These methods are attribute readers.
 
 =cut
 
-sub url { $_[0]->{url} || 'SECURITY.md' }
+sub url { (defined $_[0]->{url} ? $_[0]->{url} :
+            (defined $_[0]->{git_url} ? $_[0]->{git_url} :
+                'SECURITY.md')) }
+
+sub git_url { (defined $_[0]->{git_url} ? $_[0]->{git_url} :
+            (defined $_[0]->{url} ? $_[0]->{url} :
+                'SECURITY.md')) }
+
 
 sub support_years { $_[0]->{support_years} || '10'}
 
@@ -160,6 +180,12 @@ of a sentence, generally with a leading capitalized "The."
 =method url
 
 This method returns the URL at which a canonical text of the security policy can be
+found, if one is available.  If possible, this will point at plain text, but it
+may point to an HTML resource.
+
+=method git_url
+
+This method returns the git URL at which a canonical text of the security policy can be
 found, if one is available.  If possible, this will point at plain text, but it
 may point to an HTML resource.
 

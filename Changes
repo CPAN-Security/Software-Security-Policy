@@ -2,11 +2,15 @@ Revision history for Perl extension Software::Security::Policy
 
 {{$NEXT}}
 
+0.04 -- Sun Jan 05 19:33:52 AST 2025
+
     [Major items]
     - The Security Policy was updated to 1.0.0
     - The repo moved to CPAN-Security organization
 
     [Detailed Change Log]
+    - b5318ad Adjust Copyright to range
+    - 2c09916 Update README and Changes for a release
     - d1fe8bf Update SYNOPSIS to what is required to generate dist's SECURITY.md
     - f2c76cd Update to 1.0.0 prod version of Policy
     - 3a31a56 Update policy to 0.2.3

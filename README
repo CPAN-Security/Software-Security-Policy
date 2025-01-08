@@ -3,7 +3,7 @@ NAME
     Policys
 
 VERSION
-    version 0.04
+    version 0.05
 
 SYNOPSIS
       use strict;
@@ -16,7 +16,7 @@ SYNOPSIS
         program     => 'Software::Security::Policy',
         timeframe   => '7 days',
         url         => 'https://github.com/CPAN-Security/Software-Security-Policy/blob/main/SECURITY.md',
-        support_years   => '10',
+        perl_support_years   => '10',
       });
 
       print $policy->fulltext, "\n";
@@ -51,7 +51,7 @@ METHODS
     git_url
         a git url where the most current security policy can be found.
 
-    support_years
+    perl_support_years
         the number of years for which past major versions of Perl would be
         supported
 
@@ -66,8 +66,9 @@ METHODS
         one, or to properly capitalized "this program", if both arguments
         are omitted.
 
-  support_years
-    Get the number of years of support to be expected
+  perl_support_years
+    Get the number of years for which past major versions of Perl would be
+    supported.
 
   timeframe
     Get the expected response time. Defaults to 5 days and uses

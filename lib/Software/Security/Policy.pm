@@ -20,7 +20,7 @@ use Text::Template ();
     program     => 'Software::Security::Policy',
     timeframe   => '7 days',
     url         => 'https://github.com/CPAN-Security/Software-Security-Policy/blob/main/SECURITY.md',
-    support_years   => '10',
+    perl_support_years   => '10',
   });
 
   print $policy->fulltext, "\n";
@@ -71,7 +71,7 @@ a url where the most current security policy can be found.
 
 a git url where the most current security policy can be found.
 
-=item support_years
+=item perl_support_years
 
 the number of years for which past major versions of Perl would be
 supported
@@ -100,9 +100,10 @@ sub new {
   bless $arg => $class;
 }
 
-=method support_years
+=method perl_support_years
 
-Get the number of years of support to be expected
+Get the number of years for which past major versions of Perl would be
+supported.
 
 =method timeframe
 
@@ -131,7 +132,7 @@ sub git_url { (defined $_[0]->{git_url} ? $_[0]->{git_url} :
                 'SECURITY.md')) }
 
 
-sub support_years { $_[0]->{support_years} || '10'}
+sub perl_support_years { (defined $_[0]->{perl_support_years} ? $_[0]->{perl_support_years} : '10') };
 
 sub timeframe {
     return $_[0]->{timeframe} if defined $_[0]->{timeframe};

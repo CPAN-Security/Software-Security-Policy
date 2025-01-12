@@ -96,7 +96,7 @@ The maintainer(s) will only commit to releasing security fixes for
 the latest version of {{ $self->program }}.
 
 Note that the {{ $self->program }} project only supports major versions of Perl
-released in the past {{ $self->support_years }} years, even though {{ $self->program }} will run on
+released in the past {{ $self->perl_support_years }} years, even though {{ $self->program }} will run on
 older versions of Perl.  If a security fix requires us to increase
 the minimum version of Perl that is supported, then we may do so.
 

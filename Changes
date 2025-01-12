@@ -2,6 +2,28 @@ Revision history for Perl extension Software::Security::Policy
 
 {{$NEXT}}
 
+0.06 -- Sun Jan 12 09:40:01 AST 2025
+
+    [Major items]
+    - Breaking Change replace support_years with perl_support_years
+    - Re-release 0.05 - forgot to add a Changes update
+
+    [Detailed Change Log]
+    - 95e40d3 Increment repo Version
+    - 861f4fc v0.05
+    - 1b250d0 Fixes #2 Use perl_support_years instead of support_years
+    - a7ccd93 v0.04
+
+0.05 -- Sun Jan 12 09:33:39 AST 2025
+
+    [Major items]
+    Breaking Change replace support_years with perl_support_years
+
+    [Detailed Change Log]
+    - 861f4fc v0.05
+    - 1b250d0 Fixes #2 Use perl_support_years instead of support_years
+    - a7ccd93 v0.04
+
 0.04 -- Sun Jan 05 19:33:52 AST 2025
 
     [Major items]

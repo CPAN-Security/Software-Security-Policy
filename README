@@ -3,7 +3,7 @@ NAME
     Policys
 
 VERSION
-    version 0.05
+    version 0.06
 
 SYNOPSIS
       use strict;

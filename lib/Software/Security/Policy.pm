@@ -77,6 +77,16 @@ This method returns the complete text of the policy (summary and policy).
 This method returns the name of the policy, suitable for shoving in the middle
 of a sentence, generally with a leading capitalized "The."
 
+=cut
+
+sub name {
+  my ($self) = @_;
+  my $pkg = ref $self ? ref $self : $self;
+  $pkg =~ s/^Software::Security::Policy:://;
+  $pkg =~ s/::/ /g;
+  return $pkg;
+}
+
 =method version
 
 This method returns the version of the policy.  If the security

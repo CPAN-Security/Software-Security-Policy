@@ -308,7 +308,7 @@ __SUMMARY__
 Report issues via email at: {{ $self->maintainer }}.
 
 __SECURITY-POLICY__
-This is the Security Policy for the Perl {{ $self->program }} distribution.
+This is the Security Policy for {{ $self->program }}.
 
 The latest version of the Security Policy can be found in the
 [git repository for {{ $self->program }}]({{ $self->git_url }}).

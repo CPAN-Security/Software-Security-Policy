@@ -20,7 +20,7 @@ sub name { 'individual' }
   use Software::Security::Policy::Individual;
 
   my $policy = Software::Security::Policy::Individual->new({
-    maintainer  => 'Timothy Legge <timlegge@gmail.com>',
+    maintainer  => 'Timothy Legge <timlegge@gmail.com>',    # required
     program     => 'Software::Security::Policy',
     timeframe   => '7 days',
     url         => 'https://github.com/CPAN-Security/Software-Security-Policy/blob/main/SECURITY.md',
@@ -48,12 +48,14 @@ security policy class.  Valid arguments are:
 
 =item maintainer
 
-the current maintainer for the distibrution; required
+the current maintainer for the distibrution; B<Required>
 
 =item timeframe
 
 the time to expect acknowledgement of a security issue.  Should
-include the units such as '5 days or 2 weeks'; defaults to 5 days
+include the units such as '5 days or 2 weeks'; 
+
+Default: 5 days
 
 =item timeframe_quantity
 
@@ -168,6 +170,8 @@ The method returns value of C<program> constructor argument (if it evaluates as 
 defined, non-empty, non-zero), or value of C<Program> constructor argument (if it is true), or
 "this program" as the last resort.
 
+Default: 'this program'
+
 =cut
 
 sub program { $_[0]->{program} || $_[0]->{Program} || 'this program' }
@@ -178,6 +182,8 @@ Name of software for using at the beginning of a sentence.
 
 The method returns value of C<Program> constructor argument (if it is true), or value of C<program>
 constructor argument (if it is true), or "This program" as the last resort.
+
+Default: 'This program'
 
 =cut
 

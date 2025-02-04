@@ -135,11 +135,11 @@ These methods are attribute readers.
 
 sub url { (defined $_[0]->{url} ? $_[0]->{url} :
             (defined $_[0]->{git_url} ? $_[0]->{git_url} :
-                'SECURITY.md')) }
+                undef)) }
 
 sub git_url { (defined $_[0]->{git_url} ? $_[0]->{git_url} :
             (defined $_[0]->{url} ? $_[0]->{url} :
-                'SECURITY.md')) }
+                undef)) }
 
 
 sub perl_support_years { $_[0]->{perl_support_years} };
@@ -299,6 +299,20 @@ EOF
     return '';
   }
 }
+sub _latest_policy_location {
+  my $self = shift;
+  my $git_url = $self->git_url;
+  my $program = $self->program;
+  if (defined $git_url) {
+    return <<EOF;
+
+The latest version of the Security Policy can be found in the
+[git repository for $program]($git_url).
+EOF
+  } else {
+    return '';
+  }
+}
 1;
 
 __DATA__
@@ -309,10 +323,7 @@ Report issues via email at: {{ $self->maintainer }}.
 
 __SECURITY-POLICY__
 This is the Security Policy for {{ $self->program }}.
-
-The latest version of the Security Policy can be found in the
-[git repository for {{ $self->program }}]({{ $self->git_url }}).
-
+{{ $self->_latest_policy_location }}
 This text is based on the CPAN Security Group's Guidelines for Adding
 a Security Policy to Perl Distributions (version 1.0.0)
 https://security.metacpan.org/docs/guides/security-policy-for-authors.html

@@ -265,17 +265,6 @@ sub _fill_in {
   );
 }
 
-=head1 COPYRIGHT
-
-This software is copyright (c) 2024-2025 by Timothy Legge <timlegge@gmail.com>.
-
-This module is based extensively on Software::License.  Only the
-changes required for this module are attributable to the author of
-this module.  All other code is attributable to the author of
-Software::License.
-
-=cut
-
 sub _perl_supported_version_section {
   my $self = shift;
   my $program = $self->program;

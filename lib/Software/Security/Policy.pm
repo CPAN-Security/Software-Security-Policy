@@ -104,6 +104,12 @@ sub version  {
   return join '.', @vparts;
 }
 
+=head1 ACKNOWLEDGMENT
+
+This module is based extensively on Software::License.
+
+=cut
+
 =head1 SEE ALSO
 
 The specific policy:

@@ -53,7 +53,7 @@ the current maintainer for the distibrution; B<Required>
 =item timeframe
 
 the time to expect acknowledgement of a security issue.  Should
-include the units such as '5 days or 2 weeks'; 
+include the units such as '5 days or 2 weeks';
 
 Default: 5 days
 

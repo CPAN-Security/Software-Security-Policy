@@ -20,7 +20,7 @@ sub name { 'individual' }
   use Software::Security::Policy::Individual;
 
   my $policy = Software::Security::Policy::Individual->new({
-    maintainer  => 'Timothy Legge <timlegge@gmail.com>',
+    maintainer  => 'Timothy Legge <timlegge@gmail.com>',    # required
     program     => 'Software::Security::Policy',
     timeframe   => '7 days',
     url         => 'https://github.com/CPAN-Security/Software-Security-Policy/blob/main/SECURITY.md',
@@ -48,12 +48,14 @@ security policy class.  Valid arguments are:
 
 =item maintainer
 
-the current maintainer for the distibrution; required
+the current maintainer for the distibrution; B<Required>
 
 =item timeframe
 
 the time to expect acknowledgement of a security issue.  Should
-include the units such as '5 days or 2 weeks'; defaults to 5 days
+include the units such as '5 days or 2 weeks'; 
+
+Default: 5 days
 
 =item timeframe_quantity
 
@@ -133,11 +135,11 @@ These methods are attribute readers.
 
 sub url { (defined $_[0]->{url} ? $_[0]->{url} :
             (defined $_[0]->{git_url} ? $_[0]->{git_url} :
-                'SECURITY.md')) }
+                undef)) }
 
 sub git_url { (defined $_[0]->{git_url} ? $_[0]->{git_url} :
             (defined $_[0]->{url} ? $_[0]->{url} :
-                'SECURITY.md')) }
+                undef)) }
 
 
 sub perl_support_years { $_[0]->{perl_support_years} };
@@ -168,6 +170,8 @@ The method returns value of C<program> constructor argument (if it evaluates as 
 defined, non-empty, non-zero), or value of C<Program> constructor argument (if it is true), or
 "this program" as the last resort.
 
+Default: 'this program'
+
 =cut
 
 sub program { $_[0]->{program} || $_[0]->{Program} || 'this program' }
@@ -178,6 +182,8 @@ Name of software for using at the beginning of a sentence.
 
 The method returns value of C<Program> constructor argument (if it is true), or value of C<program>
 constructor argument (if it is true), or "This program" as the last resort.
+
+Default: 'This program'
 
 =cut
 
@@ -259,17 +265,6 @@ sub _fill_in {
   );
 }
 
-=head1 COPYRIGHT
-
-This software is copyright (c) 2024-2025 by Timothy Legge <timlegge@gmail.com>.
-
-This module is based extensively on Software::License.  Only the
-changes required for this module are attributable to the author of
-this module.  All other code is attributable to the author of
-Software::License.
-
-=cut
-
 sub _perl_supported_version_section {
   my $self = shift;
   my $program = $self->program;
@@ -293,6 +288,20 @@ EOF
     return '';
   }
 }
+sub _latest_policy_location {
+  my $self = shift;
+  my $git_url = $self->git_url;
+  my $program = $self->program;
+  if (defined $git_url) {
+    return <<EOF;
+
+The latest version of the Security Policy can be found in the
+[git repository for $program]($git_url).
+EOF
+  } else {
+    return '';
+  }
+}
 1;
 
 __DATA__
@@ -302,11 +311,8 @@ __SUMMARY__
 Report issues via email at: {{ $self->maintainer }}.
 
 __SECURITY-POLICY__
-This is the Security Policy for the Perl {{ $self->program }} distribution.
-
-The latest version of the Security Policy can be found in the
-[git repository for {{ $self->program }}]({{ $self->git_url }}).
-
+This is the Security Policy for {{ $self->program }}.
+{{ $self->_latest_policy_location }}
 This text is based on the CPAN Security Group's Guidelines for Adding
 a Security Policy to Perl Distributions (version 1.0.0)
 https://security.metacpan.org/docs/guides/security-policy-for-authors.html

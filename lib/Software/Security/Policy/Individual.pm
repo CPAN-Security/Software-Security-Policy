@@ -308,7 +308,12 @@ EOF
 sub _how_to_report {
     my $self = shift;
     if ( my $url = $self->report_url ) {
-       return "using " . $url;
+        if ( $url eq $self->git_url . "/security/advisories" ) {
+            return "via the project [Security Advisories](${url})";
+        }
+        else {
+            return "using " . $url;
+        }
     }
     else {
        return "by email to " . $self->maintainer;

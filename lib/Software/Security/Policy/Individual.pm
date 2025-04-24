@@ -162,6 +162,8 @@ sub _dotless_maintainer {
   return $maintainer;
 }
 
+sub report_url { $_[0]->{report_url}     }
+
 =method program
 
 Name of software for using in the middle of a sentence.
@@ -302,13 +304,25 @@ EOF
     return '';
   }
 }
+
+sub _how_to_report {
+    my $self = shift;
+    if ( my $url = $self->report_url ) {
+       return "using " . $url;
+    }
+    else {
+       return "by email to " . $self->maintainer;
+    }
+}
+
+
 1;
 
 __DATA__
 __SUMMARY__
 # Security Policy for the {{ $self->program }} distribution.
 
-Report issues via email at: {{ $self->maintainer }}.
+Report security issues {{ $self->_how_to_report }}.
 
 __SECURITY-POLICY__
 This is the Security Policy for {{ $self->program }}.
@@ -319,8 +333,8 @@ https://security.metacpan.org/docs/guides/security-policy-for-authors.html
 
 # How to Report a Security Vulnerability
 
-Security vulnerabilities can be reported by e-mail to the current
-project maintainers at {{ $self->maintainer }}.
+Security vulnerabilities can be reported to the current project
+maintainers {{ $self->_how_to_report }}.
 
 Please include as many details as possible, including code samples
 or test cases, so that we can reproduce the issue.  Check that your

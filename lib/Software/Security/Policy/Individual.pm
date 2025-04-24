@@ -337,7 +337,7 @@ https://security.metacpan.org/docs/guides/security-policy-for-authors.html
 
 # How to Report a Security Vulnerability
 
-Security vulnerabilities can be reported to the current project
+Security vulnerabilities can be reported to the current {{ $self->program }}
 maintainers {{ $self->_how_to_report }}.
 
 Please include as many details as possible, including code samples

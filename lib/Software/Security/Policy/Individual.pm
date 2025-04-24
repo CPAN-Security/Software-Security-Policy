@@ -309,7 +309,7 @@ sub _how_to_report {
     my $self = shift;
     if ( my $url = $self->report_url ) {
         if ( $url eq $self->git_url . "/security/advisories" ) {
-            return "via the project [Security Advisories](${url})";
+            return "via the project\n[Security Advisories](${url})";
         }
         else {
             return "using " . $url;

@@ -328,7 +328,6 @@ __SUMMARY__
 # Security Policy for the {{ $self->program }} distribution.
 
 Report security issues {{ $self->_how_to_report }}.
-
 __SECURITY-POLICY__
 This is the Security Policy for {{ $self->program }}.
 {{ $self->_latest_policy_location }}

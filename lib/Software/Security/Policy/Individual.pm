@@ -77,6 +77,10 @@ a url where the most current security policy can be found.
 
 a git url where the most current security policy can be found.
 
+=item report_url
+
+the URL where you can report security issues.
+
 =item perl_support_years
 
 the number of years for which past major versions of Perl would be
@@ -125,9 +129,9 @@ us undefined.
 
 Get the maintainer that should be contacted for security issues.
 
-=method url
+=method report_url
 
-Get the URL of the latest security policy version.
+Get the URL where you can report security issues.
 
 These methods are attribute readers.
 

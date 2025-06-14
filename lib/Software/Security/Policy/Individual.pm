@@ -50,6 +50,16 @@ security policy class.  Valid arguments are:
 
 the current maintainer for the distibrution; B<Required>
 
+if a security_contact is defined it will override the maintainer.
+
+=item security_contact
+
+the current security_contact for the distibrution; B<Optional>
+
+this will overide the maintainer and may be an option provided to
+Dist::Zilla::Plugin::SecurityPolicy if the authors are not the
+security contact.
+
 =item timeframe
 
 the time to expect acknowledgement of a security issue.  Should
@@ -158,10 +168,14 @@ sub timeframe {
     return '5 days';
 }
 
-sub maintainer { $_[0]->{maintainer}     }
+sub maintainer {
+    defined $_[0]->{security_contact} ? $_[0]->{security_contact} : $_[0]->{maintainer}
+}
 
 sub _dotless_maintainer {
-  my $maintainer = $_[0]->maintainer;
+  my $maintainer = defined $_[0]->{security_contact} ?
+                        $_[0]->{security_contact} :
+                        $_[0]->maintainer;
   $maintainer =~ s/\.$//;
   return $maintainer;
 }

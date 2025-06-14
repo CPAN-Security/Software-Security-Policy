@@ -50,6 +50,22 @@ security policy class.  Valid arguments are:
 
 the current maintainer for the distribution; B<Required>
 
+if a security_contact is defined it will override the maintainer.
+
+Note that the B<report_url>, if defined, will override both the
+B<maintainer> and B<security_contact>
+
+=item security_contact
+
+the current security contact for the distribution; B<Optional>
+
+this will override the B<maintainer> and may be an option provided to
+Dist::Zilla::Plugin::SecurityPolicy if the authors are not the
+security contact.
+
+Note that the B<report_url>, if defined, will override both the
+B<maintainer> and B<security_contact>
+
 =item timeframe
 
 the time to expect acknowledgement of a security issue.  Should
@@ -80,6 +96,9 @@ a git url where the most current security policy can be found.
 =item report_url
 
 the URL where you can report security issues.
+
+The B<report_url>, if defined, will override both the B<maintainer>
+and B<security_contact> (if defined)
 
 =item perl_support_years
 
@@ -158,10 +177,14 @@ sub timeframe {
     return '5 days';
 }
 
-sub maintainer { $_[0]->{maintainer}     }
+sub maintainer {
+    defined $_[0]->{security_contact} ? $_[0]->{security_contact} : $_[0]->{maintainer}
+}
 
 sub _dotless_maintainer {
-  my $maintainer = $_[0]->maintainer;
+  my $maintainer = defined $_[0]->{security_contact} ?
+                        $_[0]->{security_contact} :
+                        $_[0]->maintainer;
   $maintainer =~ s/\.$//;
   return $maintainer;
 }

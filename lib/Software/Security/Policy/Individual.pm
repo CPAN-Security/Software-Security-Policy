@@ -48,7 +48,7 @@ security policy class.  Valid arguments are:
 
 =item maintainer
 
-the current maintainer for the distibrution; B<Required>
+the current maintainer for the distribution; B<Required>
 
 =item timeframe
 

@@ -77,13 +77,13 @@ Default: 5 days
 
 the amount of time to expect an acknowledgement of a security issue.
 Only used if timeframe is undefined and timeframe_units is defined
-(eg. '5')
+(e.g. '5')
 
 =item timeframe_units
 
 the units of time to expect an acknowledgement of a security issue.
 Only used if timeframe is undefined and timeframe_quantity is defined
-(eg. 'days')
+(e.g. 'days')
 
 =item url
 

@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::Security::Policy;
-# ABSTRACT: packages that provide templated Security Policys
+# ABSTRACT: packages that provide templated Security Policies
 
 # VERSION
 
@@ -117,7 +117,7 @@ The specific policy:
 =for :list
 * L<Software::Security::Policy::Individual>
 
-Extra policys are maintained on CPAN in separate modules.
+Extra policies are maintained on CPAN in separate modules.
 
 =cut
 

@@ -19,7 +19,7 @@ Revision history for Perl extension Software::Security::Policy
     - cb9aa71 Update version of SECURITY.md
     - a913d68 Add missing report_url pod and remove duplicate url
     - 6c0fd47 Add tests for the report_url
-    - f7d84a3 Adjust wording to be less repetative
+    - f7d84a3 Adjust wording to be less repetitive
     - 84010b4 Wrap longer line
     - 3a9bb56 Remove extra newline from the report
     - 0850ce7 Recognise GitHub security advisories links
@@ -39,7 +39,7 @@ Revision history for Perl extension Software::Security::Policy
     - cb9aa71 Update version of SECURITY.md
     - a913d68 Add missing report_url pod and remove duplicate url
     - 6c0fd47 Add tests for the report_url
-    - f7d84a3 Adjust wording to be less repetative
+    - f7d84a3 Adjust wording to be less repetitive
     - 84010b4 Wrap longer line
     - 3a9bb56 Remove extra newline from the report
     - 0850ce7 Recognise GitHub security advisories links
